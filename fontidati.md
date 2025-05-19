@@ -106,11 +106,31 @@ https://github.com/microsoft/GlobalMLBuildingFootprints/tree/main?tab=readme-ov-
 
 https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/hvdshome
 
+## Copernicus
+
+https://land.copernicus.eu/en/map-viewer
 
 
 ## FAO
 
 https://data.apps.fao.org/map/catalo
+
+
+
+## NASA - SEDAC population Estimation Service
+
+https://sedac.ciesin.columbia.edu/mapping/popest/pes-v3/
+
+
+## World Bank Group
+
+https://datacatalog.worldbank.org/collections
+
+https://data.worldbank.org/country/1W
+
+https://maps.worldbank.org/projects?status=active
+
+
 
 
 
