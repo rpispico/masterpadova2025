@@ -24,4 +24,14 @@ Provando a utilizzare un recente pacchetto python sviluppato da Dr. Qiusheng Wu 
 ### Infrastruttura DB
 Prima di tutto sto valutando se copiare dati online (magari utili anche per Matteo e Laura) oppure fare "copia" offline per non appesantire inutilmente il server con dati su dati.
 1. Per reti e cabine primo controllo per vedere in quale/quali sezioni censuarie ricadono
-  1. Per gli elementi lineari saranno probabilmente più sezioni censuarie. Possibilità di prendere la totalità della sezione con relativo numero di abitanti oppure aggregare sotto qualche altro metodo. Questo può funzionare per acquedotto ma non rete elettriche è AT e quindi non direttamente coinvolta nella distribuzione alle comunità.  
+  * Per gli elementi lineari saranno probabilmente più sezioni censuarie. Possibilità di prendere la totalità della sezione con relativo numero di abitanti oppure aggregare sotto qualche altro metodo. Questo può funzionare per acquedotto ma non rete elettriche è AT e quindi non direttamente coinvolta nella distribuzione alle comunità.  
+2. Confronto con dati relativi a dissesti e incendi:
+  * A che distanza sono? Sono stati coinvolti? C'è un buffer di sicurezza?
+  * Aspetto da considerare penso sia anche la differenza tra le reti --> reti interrate possono magari venire toccate meno dagli incendi rispetto a quelle aeree (acquedotto vs rete elettrica AT), tuttavia se sono coinvolte in dissesti questo porta conseguenze rilevanti.
+  * Creazione per ogni record di più colonne tramite trigger indicante (per le diverse tipologie di dissesto) a che distanza si trovano? --> Valido per elementi puntuali
+  * Per elementi lineari possibile pensare di vedere che % della lunghezza sia all'interno aree a "rischio". Stessa cosa sempre creando più colonne a seconda del diverso record scelto
+
+Creazione di trigger? Al momento della creazione di un elemento andare a lanciare questi controlli con postGIS per avere le informazioni:
+ATTENZIONE: 
+* Si dovrebbe fare copia edifici (per esempio sottostazioni elettriche) per poter fare un update andando quindi a copiare dentro. Quindi ha più senso fare un trigger oppure forse fare una vista andando a lavorare direttamente da DB può essere una soluzione migliore?
+* Il numero di elementi non è poco (circa 3000) però comunque aspetti da tenere in considerazione ci sono.
