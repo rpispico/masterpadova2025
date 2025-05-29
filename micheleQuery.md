@@ -1,6 +1,7 @@
 # Test per utilizzo di query POSTGIS
 
-## POLIGONO CON POLIGONO --> Distanza minima tra i due 
+## SQL 
+### POLIGONO CON POLIGONO --> Distanza minima tra i due 
 
 ``` sql
 SELECT a.id AS id_cabine,
@@ -30,7 +31,7 @@ SELECT a.id AS id_cabine,
 ST_Distance(ST_Transform(a.geom, 4326), ST_Transform(b.geom, 32632)) AS distanza_minima
 ```
 
-## PUNTO CON POLIGONO --> Distanza minima tra i due
+### PUNTO CON POLIGONO --> Distanza minima tra i due
 Non cambia praticamente nulla con quanto sopra
 ``` sql
  SELECT a.id AS id_cabine,
@@ -52,7 +53,7 @@ Non cambia praticamente nulla con quanto sopra
   ORDER BY (st_distance(a.geom, b.geom));
 ```
 
-## LINEA CON POLIGONO --> Distanza minima tra i 2 + percentuale di lunghezza elemento interessato da evento
+### LINEA CON POLIGONO --> Distanza minima tra i 2 + percentuale di lunghezza elemento interessato da evento
 
 ``` sql
  SELECT a.fid AS id_sql_elettrodotto,
@@ -79,3 +80,67 @@ Non cambia praticamente nulla con quanto sopra
 ```
 * ST_GeomFromText('LINESTRING EMPTY', ST_SRID(...)) per evitare NULL e fornire una geometria vuota valida (di tipo linea). :: è il parser come text. ST_GeomFromText (*Constructs a PostGIS ST_Geometry object from the OGC Well-Known text representation.*)
 * il CASE e il COALESCE mi consentono di andare a ovviare nel caso ci siano problemi. In questo caso, in particolare, nel caso ci siano valori nulli (nessuna sovrapposizione). 
+
+
+
+
+
+
+## OPENSTREET MAP - OVERPASS TURBO API 
+
+### Ricerca ed estrazione cabine primarie 
+
+In questo caso, con query cabine, lui si prende tutto quanto, anche quelle secondarie. L'export poi è stato fatto in geojson tramite esporta. 
+
+```java
+[out:json][timeout:300];
+
+// Decido l'estensione --> in questo caso vado con regione Piemonte 
+area["name"="Piemonte"]["boundary"="administrative"]["admin_level"="4"]->.regione;  // Tutte queste sono chiavi che identificano il piemonte da DB OSM
+
+// Trova tutte le way con codice-valore che mi servono nell'area
+way['power'='substation'](area.regione);  // Tiro fuori tutto quanto indipendentemente da cosa si tratta
+//way['power'='substation']['substation'='distribution'](area.regione); // filtro su CP Terna AT/MT di distribuzione poi
+//way['power'='substation']['substation'='traction'](area.regione);    // filtro su CP per ferrovie
+//way['power'='substation']['substation'='industrial'](area.regione);    // filtro su CP industriali e.g. acciaierie in cui arriva direttamente AT
+
+out body;
+
+>;
+
+out skel qt;
+
+```
+
+### Estrazione Cavi AT
+```java
+[out:json][timeout:300];
+
+// Cerca regione Piemonte
+area["name"="Piemonte"]["boundary"="administrative"]["admin_level"="4"]->.regione;
+
+// Trova tutte le way con codice-valore che mi servono nell'area
+way['power'='line'](area.regione);
+
+out body;
+
+>;
+
+out skel qt;
+```
+### Ricerca ed estrazione impianti trattamento acque reflue
+
+```jaba
+[out:json][timeout:300];
+
+// Cerca regione Piemonte
+area["name"="Piemonte"]["boundary"="administrative"]["admin_level"="4"]->.regione;
+
+// Trova tutte le way con codice-valore che mi servono nell'area
+way['man_made'='wastewater_plant'](area.regione);
+
+out body;
+
+>;
+```
+out skel qt;
