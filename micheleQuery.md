@@ -142,5 +142,10 @@ way['man_made'='wastewater_plant'](area.regione);
 out body;
 
 >;
-```
+
 out skel qt;
+```
+
+
+
+
