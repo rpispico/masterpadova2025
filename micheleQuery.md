@@ -1,6 +1,15 @@
 # Test per utilizzo di query POSTGIS
 
 ## SQL 
+
+## CAMBIO SCHEMA A UNA TABELLA
+
+``` sql
+ALTER TABLE lavoro.punti_innesco_incendi
+	SET SCHEMA inputdata;
+``` 
+
+
 ### POLIGONO CON POLIGONO --> Distanza minima tra i due 
 
 ``` sql
