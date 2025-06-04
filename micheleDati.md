@@ -1,6 +1,9 @@
 # Idee e dati di lavoro Michele
 ## Obiettivo
 Tramite dati liberamente accessibili su geoportali provare a capire se possibile declinare una nuova accezione di sicurezza energetica valutando quali reti/strutture ricadono all'interno di aree già interessate oppure in aree a rischio per particolare eventi naturali come alluvioni, incendi, valanghe e dissesti. 
+A questi eventi naturali, si possono aggiungere anche informazioni relative alle isole di calore --> Regione Piemonte aveva già prodotto dati con ISTAT 2011, LST (Land Surface Temperature) e NDVI. Si può valutare un aggiornamento? In che modo? Utilizzare GEE per non andare a scaricare mille dati (ora sono disponibili Landsat 8 e 9 per LST e anche NDVI ), dati su censimento popolazione (https://www.geoportale.piemonte.it/geonetwork/srv/ita/catalog.search#/metadata/r_piemon:029976c9-3dfc-45dc-bb62-8c516a272578). MODIS / LANDSAT e/o 9 / COPERNICUS
+Anche le isole di calore possono essere trattate come eventi naturali "estremi" da andare a valutare che possono andare a mettere in pericolo particolari Infrastrutture Critiche (in particolare per elettricità direi)
+
 
 ## Dati 
 ### Istat
