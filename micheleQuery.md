@@ -173,3 +173,24 @@ out body;
 
 out skel qt;
 ```
+
+
+
+### Ricerca Tralicci
+
+```java
+
+[out:json][timeout:300];
+
+// Cerca regione Piemonte
+area["name"="Piemonte"]["boundary"="administrative"]["admin_level"="4"]->.regione;
+
+// Trova tutte le way con codice-valore che mi servono nell'area
+node['power'='tower'](area.regione);
+
+out body;
+
+>;
+
+out skel qt;
+```
