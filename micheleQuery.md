@@ -137,6 +137,24 @@ out body;
 
 out skel qt;
 ```
+
+
+### Estrazione Cavi Minor Line (MT-BT??)
+```java
+[out:json][timeout:300];
+
+// Cerca regione Piemonte
+area["name"="Piemonte"]["boundary"="administrative"]["admin_level"="4"]->.regione;
+
+// Trova tutte le way con codice-valore che mi servono nell'area
+way['power'='minor_line'](area.regione);
+
+out body;
+
+>;
+
+out skel qt;
+```
 ### Ricerca ed estrazione impianti trattamento acque reflue
 
 ```java
