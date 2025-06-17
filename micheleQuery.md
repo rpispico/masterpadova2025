@@ -103,6 +103,12 @@ and ST_Within(ST_Transform(e.geom,32632),i.geom) -- Il within, invece, guarda ef
 order by e.id;
 ``` 
 
+| Funzione        | Cosa fa?                                                                 | Tipo di confronto                  | Precisione                                   |
+| --------------- | ------------------------------------------------------------------------ | ---------------------------------- | -------------------------------------------- |
+| **`&&`**        | Verifica se le **bounding box** delle due geometrie si sovrappongono.    | Sovrapposizione delle bounding box | Controllo rapido, ma non preciso             |
+| **`ST_Within`** | Verifica se una geometria è **completamente dentro** un'altra geometria. | Contenimento geometrico            | Più preciso, verifica la geometria effettiva |
+
+
 
 ## OPENSTREET MAP - OVERPASS TURBO API 
 
