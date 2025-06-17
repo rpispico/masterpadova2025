@@ -90,9 +90,18 @@ Non cambia praticamente nulla con quanto sopra
 * ST_GeomFromText('LINESTRING EMPTY', ST_SRID(...)) per evitare NULL e fornire una geometria vuota valida (di tipo linea). :: è il parser come text. ST_GeomFromText (*Constructs a PostGIS ST_Geometry object from the OGC Well-Known text representation.*)
 * il CASE e il COALESCE mi consentono di andare a ovviare nel caso ci siano problemi. In questo caso, in particolare, nel caso ci siano valori nulli (nessuna sovrapposizione). 
 
+## Intersezione Punto con Poligono esportando informazioni tra i due campi
 
-
-
+``` sql
+select e.id, e.descr_uso, i.cod_ince  --campi da mantenere
+from istat.cens_edifici_ppr e, piemonte.areepercorseincendi i
+where e.comuni = 'Mompantero' --filtro per limitare i risultati
+and ST_Transform(e.geom,32632) && i.geom  -- && serve per vedere se le bounding box si intersecano.. verifica speditiva
+and st_isvalid(e.geom)
+and st_isvalid(i.geom)
+and ST_Within(ST_Transform(e.geom,32632),i.geom) -- Il within, invece, guarda effettivamente se il punto è all'interno del poligono 
+order by e.id;
+``` 
 
 
 ## OPENSTREET MAP - OVERPASS TURBO API 
