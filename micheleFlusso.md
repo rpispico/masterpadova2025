@@ -30,14 +30,22 @@ INPUT DATA:
 Qui verifica puramente quantitativa verificando quanti elementi attualmente sono all'interno delle diverse aree e tirare fuori valutazione
 Questi dati come possono essere messi in relazione con dati istat? Magari si può valutare la distanza tra le diverse cabine primarie disponibili e valutare magari con Poligoni di Tyssen? Paper Bosisio. 
 
-  ## 2a Parte - Controllo altri rischi? Vediamo come sono messo
-
+  ## 2a Parte - Controllo altri rischi? Area studio ristretta
+### Uso Suolo Piemonte
 Andare a valutare rispetto ad altri dati come il CLC del Piemonte (edizione 2018) --> come sono le aree in cui si trovano queste infrastrutture?
+https://www.geoportale.piemonte.it/geonetwork/srv/ita/catalog.search;jsessionid=1907C77A00157E43A595F9A5DD20956C.clu001node01_tc1-catalogo-gnosreg?node=srv#/metadata/r_piemon:35df8a16-5d89-461f-a0f2-abc2180713d2
+Si può usare questo dato di maggiore dettaglio rispetto al CLC Copernicus. Estrazione dei dati 2023 solo per aree provincia di Cuneo
 
+### Vento
 Altro fattore "critico" potrebbe essere il vento --> Quali dati a disposizione ci sono? Raster prodotti online da winddata --> Bassa risoluzione oppure, partendo da dati ARPA Piemonte e API tirare fuori dati "storici" e valutare come aggregarli/spazializzarli. 
 Potrebbe essere una opzione/test, direttamente da POSTGIS andare a salvare tabella risultati e fare un Kriging o un IDW magari con due raster, uno su velocità media del vento e un altro per la velocità massima. 
+Estrazione stazioni meteo con anemometri e provincia di Cuneo
 
-Valutazione della canopy da dati satellitari? 
+### Valutazione della canopy da dati satellitari
+Utilizzo dati provenienti da questo studio https://nlang.users.earthengine.app/view/global-canopy-height-2020. Possibilità di avere dati 10x10 m con standard deviation relativamente all'altezza della canopy.
+https://www.research-collection.ethz.ch/handle/20.500.11850/609802. 
+Scaricato due geotif che coprono area del piemonte (tranne Lingua a est) 3x3 gradi e successivamente mergiati e poi clippati su estensione regione Piemonte. 
+
 
 ## 3a parte WebGIS per andare a creare punti con trigger automatici
 Possibilità di utilizzarlo come strumento di pianificazione quick and dirty. Creazione di un punto e valutare eventuali distanze di quel punto dai rischi visti sopra.
