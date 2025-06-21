@@ -227,3 +227,22 @@ out body;
 
 out skel qt;
 ```
+
+
+## Ricerca dighe
+
+```java
+[out:json][timeout:300];
+
+// Cerca regione Piemonte
+area["name"="Piemonte"]["boundary"="administrative"]["admin_level"="4"]->.regione;
+
+// Trova tutte le way con codice-valore che mi servono nell'area
+way['waterway'='dam'](area.regione);
+
+out body;
+
+>;
+
+out skel qt;
+```
