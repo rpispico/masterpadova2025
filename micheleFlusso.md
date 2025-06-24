@@ -31,6 +31,14 @@ Qui verifica puramente quantitativa verificando quanti elementi attualmente sono
 Questi dati come possono essere messi in relazione con dati istat? Magari si può valutare la distanza tra le diverse cabine primarie disponibili e valutare magari con Poligoni di Tyssen? Paper Bosisio. 
 
   ## 2a Parte - Controllo altri rischi? Area studio ristretta
+
+Prendo gli elettrodotti e faccio un merge di tutti e tre (i due da OSM e quello BDTRE) per poi fare un clip su Provincia di CUNEO. Dopo, faccio un buffer di 5/10 metri per lato per fare un corridoio intorno alle campate. Questo buffer lo uso per clippare il corine land cover da geoportale piemonte e vedere quale sia l'uso del suolo in un quel corridoio.. 
+Secondo step è andare a vedere e analizzare solamente dove uso del suolo comprende copertura arborea... Scarico plugin Group Stats di qgis che mi crea una sorta di pivot molto utile per avere una idea delle numeriche.
+Non ci sono molte centraline con anemomentro.. Forse meglio fare in Val di Susa. 
+
+
+
+  
 ### Uso Suolo Piemonte
 Andare a valutare rispetto ad altri dati come il CLC del Piemonte (edizione 2018) --> come sono le aree in cui si trovano queste infrastrutture?
 https://www.geoportale.piemonte.it/geonetwork/srv/ita/catalog.search;jsessionid=1907C77A00157E43A595F9A5DD20956C.clu001node01_tc1-catalogo-gnosreg?node=srv#/metadata/r_piemon:35df8a16-5d89-461f-a0f2-abc2180713d2
