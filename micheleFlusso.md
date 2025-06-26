@@ -32,7 +32,7 @@ Questi dati come possono essere messi in relazione con dati istat? Magari si pu√
 
   ## 2a Parte - Controllo altri rischi? Area studio ristretta
 
-Prendo gli elettrodotti e faccio un merge di tutti e tre (i due da OSM e quello BDTRE) per poi fare un clip su Provincia di CUNEO. Dopo, faccio un buffer di 5/10 metri per lato per fare un corridoio intorno alle campate. Questo buffer lo uso per clippare il corine land cover da geoportale piemonte e vedere quale sia l'uso del suolo in un quel corridoio.. 
+Prendo gli elettrodotti e faccio un merge di tutti e tre (i due da OSM e quello BDTRE) per poi fare un clip su Provincia di Torino, Alta Val Susa e Val Chisone. Dopo, faccio un buffer di 5/10 metri per lato per fare un corridoio intorno alle campate. Questo buffer lo uso per clippare il corine land cover da geoportale piemonte e vedere quale sia l'uso del suolo in un quel corridoio.. 
 Secondo step √® andare a vedere e analizzare solamente dove uso del suolo comprende copertura arborea... Scarico plugin Group Stats di qgis che mi crea una sorta di pivot molto utile per avere una idea delle numeriche.
 Non ci sono molte centraline con anemomentro.. Forse meglio fare in Val di Susa. 
 
