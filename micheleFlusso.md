@@ -35,8 +35,9 @@ Questi dati come possono essere messi in relazione con dati istat? Magari si pu�
 Prendo gli elettrodotti e faccio un merge di tutti e tre (i due da OSM e quello BDTRE) per poi fare un clip su Provincia di Torino, Alta Val Susa e Val Chisone. Dopo, faccio un buffer di 5/10 metri per lato per fare un corridoio intorno alle campate. Questo buffer lo uso per clippare il corine land cover da geoportale piemonte e vedere quale sia l'uso del suolo in un quel corridoio.. 
 Secondo step è andare a vedere e analizzare solamente dove uso del suolo comprende copertura arborea... Scarico plugin Group Stats di qgis che mi crea una sorta di pivot molto utile per avere una idea delle numeriche.
 Non ci sono molte centraline con anemomentro.. Forse meglio fare in Val di Susa. 
-
-
+Scaricato DSM 1m LAST e FIRST (Forse anche DTM) https://gn.mase.gov.it/portale/distribuzione-dati-pst. Utile per vedere altezza delle campate/fili e anche alberi intorno
+In teoria, ma è da controllare, il DTM dovrebbe essere uguale al DSM LAST da quello che posso capire.. Da qui potrei essere in grado di calcolare i dati relativi alle altezze di alberi e linee aeree (dove dato è disponibile). 
+https://support.esri.com/en-us/knowledge-base/how-to-extract-the-tree-canopy-height-from-a-lidar-data-000030802
 
   
 ### Uso Suolo Piemonte
