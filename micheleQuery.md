@@ -250,12 +250,12 @@ out skel qt;
 Usando OSGeo4W Shell posso direttamente lanciare comandi di gdal shell. In questo modo ho fatto queste attività piuttosto che utilizzare script più complicati. 
 
 * Cambio working directory
-```
+```console
 cd C:\Users\.....   -- in cui vado a inserire il mio percorso
 ```
 
 * Creazione file txt comprendente tutti i nomi dei file tif del DSM/DTM scaricate da portale ministero
-```
+```console
 dir /b /s *.tif > tiff_list.txt
 ```
 Breakdown del comando:
@@ -275,7 +275,7 @@ Non solo nella cartella corrente, ma anche in quelle annidate
 Trova tutti i file con estensione .tif
 L'asterisco * è un wildcard che significa "qualsiasi nome"
 
-> - Operatore di redirezione
+'>' - Operatore di redirezione
 
 Invece di mostrare l'output a schermo, lo scrive in un file
 
@@ -284,7 +284,7 @@ tiff_list.txt - File di destinazione
 Crea (o sovrascrive) questo file di testo con la lista
 
 * Merge dei file tiff
-```
+```console
 gdal_merge -o mosaic_dsm_first.tif --optfile tiff_list.txt
 ```
 
