@@ -246,3 +246,62 @@ out body;
 
 out skel qt;
 ```
+## GDAL 
+Usando OSGeo4W Shell posso direttamente lanciare comandi di gdal shell. In questo modo ho fatto queste attività piuttosto che utilizzare script più complicati. 
+
+* Cambio working directory
+```
+cd C:\Users\.....   -- in cui vado a inserire il mio percorso
+```
+
+* Creazione file txt comprendente tutti i nomi dei file tif del DSM/DTM scaricate da portale ministero
+```
+dir /b /s *.tif > tiff_list.txt
+```
+Breakdown del comando:
+dir - Comando per listare file e cartelle
+
+/b - Opzione "bare format"
+Mostra solo i nomi dei file (senza date, dimensioni, attributi)
+Output pulito, un file per riga
+
+/s - Opzione "subdirectories"
+
+Cerca ricorsivamente in tutte le sottocartelle
+Non solo nella cartella corrente, ma anche in quelle annidate
+
+*.tif - Pattern di ricerca
+
+Trova tutti i file con estensione .tif
+L'asterisco * è un wildcard che significa "qualsiasi nome"
+
+> - Operatore di redirezione
+
+Invece di mostrare l'output a schermo, lo scrive in un file
+
+tiff_list.txt - File di destinazione
+
+Crea (o sovrascrive) questo file di testo con la lista
+
+* Merge dei file tiff
+```
+gdal_merge -o mosaic_dsm_first.tif --optfile tiff_list.txt
+```
+
+Breakdown del comando:
+gdal_merge - Utility GDAL per unire/mosaicare raster
+
+Parte del pacchetto GDAL tools
+Equivalente Python: gdal_merge.py
+
+-o mosaic_dsm_first.tif - Output file
+
+-o specifica il nome del file di output
+mosaic_dsm_first.tif sarà il file risultante
+Dal nome sembra essere un DSM (Digital Surface Model)
+
+--optfile tiff_list.txt - Input da file di lista
+
+--optfile legge la lista dei file da un file di testo
+Usa il file tiff_list.txt creato dal comando precedente
+Alternativa a specificare tutti i file manualmente
