@@ -39,6 +39,11 @@ Scaricato DSM 1m LAST e FIRST (Forse anche DTM) https://gn.mase.gov.it/portale/d
 In teoria, ma è da controllare, il DTM dovrebbe essere uguale al DSM LAST da quello che posso capire.. Da qui potrei essere in grado di calcolare i dati relativi alle altezze di alberi e linee aeree (dove dato è disponibile). 
 https://support.esri.com/en-us/knowledge-base/how-to-extract-the-tree-canopy-height-from-a-lidar-data-000030802
 
+Scaricato dati copernicus (sentinel2 L2A) per calcolo di NDVI e EVI 
+Per EVI, ho dovuto trasfromare i valore dividendo per 10000 perché I dati Sentinel-2 L2A hanno valori di riflettanza moltiplicati per 10000 per essere salvati come interi. Senza questa divisione, i risultati sono fuori scala
+```
+2.5 * (("T32TLQ_20250530T103041_B08_10m_merge_clip@1" / 10000.0) - ("T32TLQ_20250530T103041_B04_10m_merge_clip@1" / 10000.0)) / (("T32TLQ_20250530T103041_B08_10m_merge_clip@1" / 10000.0) + 6.0 * ("T32TLQ_20250530T103041_B04_10m_merge_clip@1" / 10000.0) - 7.5 * ("T32TLQ_20250530T103041_B02_10m_merge_clip@1" / 10000.0) + 1.0)
+```
   
 ### Uso Suolo Piemonte
 Andare a valutare rispetto ad altri dati come il CLC del Piemonte (edizione 2018) --> come sono le aree in cui si trovano queste infrastrutture?
