@@ -16,6 +16,7 @@ Anche le isole di calore possono essere trattate come eventi naturali "estremi" 
 * Impianti relativi a sottoservizi accessibili sempre tramite BDTRE Piemonte e, in particolare, all'interno della classe MANUFATTO INDUSTRIALE (MN_IND - 020201) elementri in cui il MN_IND_TY sia Cabina Trasformazione Energia, Cabina Rete Acqua, Cabina rete gas). Per reference si può fare riferimento al catalogo oggetti BDTRE (Utilizzata Versione 2.2.2 - 24 Marzo 2025)
 * Dissesti PAI --> https://www.geoportale.piemonte.it/geonetwork/srv/ita/catalog.search#/metadata/r_piemon:6640f61c-74be-4ae8-964a-3b466fda813f
 * IFFI idrogeo per dati aggiornati
+* Corine Land cover ( https://www.geoportale.piemonte.it/geonetwork/srv/ita/catalog.search#/metadata/r_piemon:35df8a16-5d89-461f-a0f2-abc2180713d2)
 
 Sarebbe interessante anche, in un'ottica di aree sempre più utilizzate anche per altre forme di produzione energetica (Impianti fotovoltaici, biogas?) valutare se anche queste infrastrutture siano "sicure" rispetto ai criteri puramente di confronto di cui sopra. 
 
